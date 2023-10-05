@@ -1,0 +1,158 @@
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/material.dart';
+import 'character01_model.dart';
+export 'character01_model.dart';
+
+class Character01Widget extends StatefulWidget {
+  const Character01Widget({Key? key}) : super(key: key);
+
+  @override
+  _Character01WidgetState createState() => _Character01WidgetState();
+}
+
+class _Character01WidgetState extends State<Character01Widget> {
+  late Character01Model _model;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => Character01Model());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: Color(0xFF707070),
+        appBar: AppBar(
+          backgroundColor: Color(0xFF48484B),
+          automaticallyImplyLeading: false,
+          title: Text(
+            'SCP',
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Outfit',
+                  color: Colors.white,
+                  fontSize: 22.0,
+                ),
+          ),
+          actions: [],
+          centerTitle: false,
+          elevation: 2.0,
+        ),
+        body: SafeArea(
+          top: true,
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(40.0, 10.0, 40.0, 0.0),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(58.0),
+                  child: Image.asset(
+                    'assets/images/scp01.jpg',
+                    width: 272.0,
+                    height: 232.0,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                child: Text(
+                  'รายละเอียด',
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Readex Pro',
+                        color: FlutterFlowTheme.of(context).info,
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.w800,
+                      ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 25.0, 0.0),
+                child: Text(
+                  'SCP-001 เป็นวัตถุหรือสิ่งมีชีวิตที่ทรงพลังที่สุดที่รู้จัก เป็นที่เชื่อกันว่าเป็นสิ่งมีชีวิตหรือสิ่งมีชีวิตที่ควบคุมหรือสร้างจักรวาลของเรา SCP-001 มีหลายรูปแบบและสามารถปรากฏในลักษณะต่างๆ ขึ้นอยู่กับผู้สังเกตการณ์ บางคนเห็นเป็นเทพเจ้า บางคนเห็นเป็นสิ่งมีชีวิตนอกโลก และบางคนเห็นเป็นสิ่งมีชีวิตเหนือธรรมชาติ SCP-001 มักจะถูกมองว่าเป็นสิ่งมีชีวิตที่ทรงพลังและน่าเกรงขาม มักถูกมองว่าเป็นภัยคุกคามต่อมนุษยชาติ',
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Readex Pro',
+                        color: FlutterFlowTheme.of(context).info,
+                      ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(60.0, 0.0, 60.0, 0.0),
+                child: FFButtonWidget(
+                  onPressed: () async {
+                    await launchURL('http://scp-th.wikidot.com/scp-series-th');
+                  },
+                  text: 'ค้นหา',
+                  options: FFButtonOptions(
+                    height: 40.0,
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                    iconPadding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: Color(0xFFA18B83),
+                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                          fontFamily: 'Readex Pro',
+                          color: Colors.white,
+                        ),
+                    elevation: 3.0,
+                    borderSide: BorderSide(
+                      color: Colors.transparent,
+                      width: 1.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(60.0, 5.0, 60.0, 0.0),
+                child: FFButtonWidget(
+                  onPressed: () async {
+                    context.pushNamed('HomePage');
+                  },
+                  text: 'กลับ',
+                  options: FFButtonOptions(
+                    height: 40.0,
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                    iconPadding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: Color(0xFF959598),
+                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                          fontFamily: 'Readex Pro',
+                          color: Colors.white,
+                        ),
+                    elevation: 3.0,
+                    borderSide: BorderSide(
+                      color: Colors.transparent,
+                      width: 1.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
